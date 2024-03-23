@@ -2,8 +2,11 @@ function Header() {
     return (
         <header>
             <h1>Hoodie Color Picker</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo molestiae illo minima ipsam, eaque nisi totam, aliquam sapiente deleniti, corporis amet temporibus quasi repellat quis. Sed dolorem voluptatum eveniet similique!</p>
-        </header>
+            <p>
+                Do you have a choice of hoodies in many colors and don't know which one to wear today? <strong>Don't worry!</strong><br />
+                This program will choose for you, so you can show off amazing colors on the street!
+            </p>
+        </header >
     )
 }
 
