@@ -1,4 +1,7 @@
 $basicWhite: #F5ECDC;
+$basicWhiteHover: #F5ECDCD0;
+$orange: #F05D23;
+$orangeHover: #F05D23C2;
 
 body {
     background-image: url(/Background.jpg);
@@ -42,12 +45,12 @@ header {
         padding: 0;
 
         a {
-            color: #F05D23;
+            color: $orange;
             text-decoration: none;
             transition: color 0.3s ease-in-out;
 
             &:hover {
-                color: #F05D23C2;
+                color: $orangeHover;
             }
         }
     }
@@ -74,8 +77,8 @@ header {
 
         &:hover {
             background-color: #F05D2355;
-            color: #F5ECDCD0;
-            border: 3px solid #F05D23;
+            color: $basicWhiteHover;
+            border: 3px solid $orange;
         }
     }
 }
