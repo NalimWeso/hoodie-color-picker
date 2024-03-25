@@ -1,31 +1,98 @@
+$basicWhite: #F5ECDC;
+
 body {
-    background-color: #2F3C4F;
-    color: #F5ECDC;
+    background-image: url(/Background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    color: $basicWhite;
     font-family: "Roboto Condensed", sans-serif;
-    font-size: 2.3rem;
+    font-size: 2.5rem;
     display: flex;
     justify-content: center;
 }
 
+@media screen and (max-width: 1840px) {
+    body {
+        font-size: 2vw
+    }
+}
+
 header {
-    background-color: #41526A;
-    border: 3px solid #F5ECDC;
+    background-color: transparent;
+    font-size: 3rem;
+    margin: 0;
+    padding: 15px;
     border-radius: 50px;
-    margin: 20px 0 0 0;
-    padding: 20px;
-    display: inline-block;
+    text-shadow: 0 0 3px #00000086, 0 0 5px #00000086;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    user-select: none;
+
+    h5 {
+        margin: 0 0 -10px 0;
+        padding: 0;
+
+        a {
+            color: #F05D23;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+
+            &:hover {
+                color: #F05D23C2;
+            }
+        }
+    }
 
     h1 {
         text-align: center;
         margin: 0;
         padding: 0;
         cursor: default;
-        user-select: none;
     }
 
-    p {
-        font-family: "Comic Neue", cursive;
-        margin: 10px 0 10px 0;
-        text-align: center;
+    button {
+        background-color: transparent;
+        color: $basicWhite;
+        font-size: 3vw;
+        font-weight: bold;
+        text-shadow: 0 0 3px #00000086, 0 0 5px #00000086;
+        margin: 10px;
+        padding: 15px;
+        border: 3px solid $basicWhite;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
+
+        &:hover {
+            background-color: #F05D2355;
+            color: #F5ECDCD0;
+            border: 3px solid #F05D23;
+        }
     }
+}
+
+@media (max-width: 1100px) {
+    header {
+        padding: 1.5vw;
+        border: .3vw solid $basicWhite;
+        border-radius: 5vw;
+    }
+}
+
+img {
+    width: 500px;
+}
+
+p {
+    font-family: "Comic Neue", cursive;
+    text-align: center;
 }

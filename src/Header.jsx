@@ -1,11 +1,9 @@
 function Header() {
     return (
         <header>
+            <h5><a href="https://github.com/NalimWeso" target="_blank">NALIMWESO</a> PRESENTS</h5>
             <h1>Hoodie Color Picker</h1>
-            <p>
-                Do you have a choice of hoodies in many colors and don't know which one to wear today? <strong>Don't worry!</strong><br />
-                This program will choose for you, so you can show off amazing outfit on the street!
-            </p>
+            <button>START</button>
         </header >
     )
 }
