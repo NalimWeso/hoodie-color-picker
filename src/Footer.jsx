@@ -1,7 +1,7 @@
 function Footer() {
     return (
         <footer>
-            <p>IMAGES SOURCED FROM PEXELS</p>
+            <a href="https://www.pexels.com/" target="_blank">IMAGES SOURCED FROM PEXELS</a>
         </footer>
     )
 }

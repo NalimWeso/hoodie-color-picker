@@ -4,6 +4,7 @@ $orange: #F05D23;
 $orangeOpacityLight: #F05D23C2;
 $orangeOpacityDark: #F05D2355;
 $blackOpacityLight: #0000005E;
+$blackOpacityDark: #00000085;
 
 body {
     background-image: url(/Background.jpg);
@@ -95,7 +96,7 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
 
-    p {
+    a {
         background-color: $blackOpacityLight;
         color: $basicWhite;
         font-size: 20px;
@@ -103,5 +104,13 @@ footer {
         padding: 5px;
         border: 2px solid $basicWhite;
         border-radius: 5px;
+        text-decoration: none;
+        transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+
+        &:hover {
+            background-color: $blackOpacityDark;
+            color: $basicWhiteHover;
+            border-color: $basicWhiteHover;
+        }
     }
 }
