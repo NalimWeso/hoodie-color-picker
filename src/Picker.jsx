@@ -1,5 +1,3 @@
-import Randomizer from "./Randomizer"
-
 function Picker() {
     function end() {
         window.location.href = '/header';
