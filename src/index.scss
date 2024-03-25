@@ -3,11 +3,13 @@ $basicWhiteHover: #F5ECDCD0;
 $orange: #F05D23;
 $orangeOpacityLight: #F05D23C2;
 $orangeOpacityDark: #F05D2355;
+$blue: #0092CA;
+$blueOpacityDark: #0092CA55;
 $blackOpacityLight: #0000005E;
 $blackOpacityDark: #00000085;
 
 body {
-    background-image: url(/Background.jpg);
+    background-image: url(/BackgroundHeader.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -20,6 +22,26 @@ body {
 
     @media (max-width: 1840px) {
         font-size: 2vw
+    }
+}
+
+@mixin button($fontSize, $backgroundColor, $border) {
+    background-color: transparent;
+    color: $basicWhite;
+    font-size: $fontSize; //60px
+    font-weight: bold;
+    text-shadow: 0 0 3px #00000086, 0 0 5px #00000086;
+    margin: 0 0 10px 0;
+    padding: 15px;
+    border: 3px solid $basicWhite;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
+
+    &:hover {
+        background-color: $backgroundColor;
+        color: $basicWhiteHover;
+        border: 3px solid $border;
     }
 }
 
@@ -68,29 +90,45 @@ header {
     }
 
     button {
-        background-color: transparent;
-        color: $basicWhite;
-        font-size: 3vw;
-        font-weight: bold;
-        text-shadow: 0 0 3px #00000086, 0 0 5px #00000086;
-        margin: 0 0 10px 0;
-        padding: 15px;
-        border: 3px solid $basicWhite;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
-
-        &:hover {
-            background-color: $orangeOpacityDark;
-            color: $basicWhiteHover;
-            border: 3px solid $orange;
-        }
+        @include button(60px, $orangeOpacityDark, $orange);
     }
 }
 
+.picker {
+    button {
+        @include button(50px, $blueOpacityDark, $blue);
+    }
+
+    button:last-child {
+        @include button(30px, $blueOpacityDark, $blue);
+    }
+
+    img {
+        margin-bottom: 10px;
+        width: 450px;
+        border: 3px solid $basicWhite;
+        border-radius: 15px;
+        filter: saturate(200%) opacity(75%);
+        transition: border-color 0.3s ease-in-out, filter 0.3s ease-in-out;
+
+        &:hover {
+            border-color: $blue;
+            filter: saturate(200%) opacity(100%);
+        }
+    }
+
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 footer {
+    width: max-content;
+    display: block;
     position: fixed;
-    bottom: -1%;
+    bottom: 0;
     left: 50%;
     transform: translate(-50%, -50%);
     user-select: none;
