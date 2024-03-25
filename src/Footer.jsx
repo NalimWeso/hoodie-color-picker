@@ -1,6 +1,8 @@
 function Footer() {
     return (
-        <footer>Check</footer>
+        <footer>
+            <p>IMAGES SOURCED FROM PEXELS</p>
+        </footer>
     )
 }
 

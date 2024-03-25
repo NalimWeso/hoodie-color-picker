@@ -1,7 +1,9 @@
 $basicWhite: #F5ECDC;
 $basicWhiteHover: #F5ECDCD0;
 $orange: #F05D23;
-$orangeHover: #F05D23C2;
+$orangeOpacityLight: #F05D23C2;
+$orangeOpacityDark: #F05D2355;
+$blackOpacityLight: #0000005E;
 
 body {
     background-image: url(/Background.jpg);
@@ -23,7 +25,6 @@ body {
 }
 
 header {
-    background-color: transparent;
     font-size: 3rem;
     margin: 0;
     padding: 15px;
@@ -40,6 +41,11 @@ header {
     transform: translate(-50%, -50%);
     user-select: none;
 
+    @media (max-width: 1100px) {
+        padding: 1.5vw;
+        border-radius: 5vw;
+    }
+
     h5 {
         margin: 0 0 -10px 0;
         padding: 0;
@@ -50,7 +56,7 @@ header {
             transition: color 0.3s ease-in-out;
 
             &:hover {
-                color: $orangeHover;
+                color: $orangeOpacityLight;
             }
         }
     }
@@ -76,25 +82,26 @@ header {
         transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
 
         &:hover {
-            background-color: #F05D2355;
+            background-color: $orangeOpacityDark;
             color: $basicWhiteHover;
             border: 3px solid $orange;
         }
     }
 }
 
-@media (max-width: 1100px) {
-    header {
-        padding: 1.5vw;
-        border-radius: 5vw;
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    p {
+        background-color: $blackOpacityLight;
+        color: $basicWhite;
+        font-size: 20px;
+        margin: 0;
+        padding: 5px;
+        border: 2px solid $basicWhite;
+        border-radius: 5px;
     }
 }
-
-// img {
-//     width: 500px;
-// }
-
-// p {
-//     font-family: "Comic Neue", cursive;
-//     text-align: center;
-// }
