@@ -95,13 +95,11 @@ header {
 }
 
 .picker {
-    button {
-        @include button(50px, $blueOpacityDark, $blue);
-    }
-
-    button:last-child {
-        @include button(30px, $blueOpacityDark, $blue);
-    }
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     img {
         margin-bottom: 10px;
@@ -117,11 +115,13 @@ header {
         }
     }
 
-    margin-top: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    button {
+        @include button(50px, $blueOpacityDark, $blue);
+
+        &:last-child {
+            @include button(30px, $blueOpacityDark, $blue);
+        }
+    }
 }
 
 footer {
