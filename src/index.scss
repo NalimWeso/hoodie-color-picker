@@ -25,7 +25,7 @@ body {
     }
 }
 
-@mixin button($fontSize, $backgroundColor, $border) {
+@mixin button($fontSize, $mainColor, $backgroundColor) {
     background-color: transparent;
     color: $basicWhite;
     font-size: $fontSize;
@@ -36,17 +36,16 @@ body {
     border: 3px solid $basicWhite;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out, box-shadow 0.1s ease-in-out;
 
     &:hover {
         background-color: $backgroundColor;
         color: $basicWhiteHover;
-        border: 3px solid $border;
+        border: 3px solid $mainColor;
     }
 
     &:active {
-        background-color: $blackOpacityDark;
-        border: 3px solid $blackOpacityDark;
+        box-shadow: 0 0px 15px $mainColor;
     }
 }
 
@@ -95,7 +94,7 @@ header {
     }
 
     button {
-        @include button(60px, $orangeOpacityDark, $orange);
+        @include button(60px, $orange, $orangeOpacityDark);
     }
 }
 
@@ -121,10 +120,10 @@ header {
     }
 
     button {
-        @include button(50px, $blueOpacityDark, $blue);
+        @include button(50px, $blue, $blueOpacityDark);
 
         &:last-child {
-            @include button(30px, $blueOpacityDark, $blue);
+            @include button(30px, $blue, $blueOpacityDark);
         }
     }
 }
@@ -147,7 +146,7 @@ footer {
         border: 2px solid $basicWhite;
         border-radius: 5px;
         text-decoration: none;
-        transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+        transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.1s ease-in-out;
 
         &:hover {
             background-color: $blackOpacityDark;
@@ -156,8 +155,7 @@ footer {
         }
 
         &:active {
-            background-color: $blackOpacityDark;
-            border: 3px solid $blackOpacityDark;
+            box-shadow: 0 0px 10px $basicWhiteHover;
         }
     }
 }
