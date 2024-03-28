@@ -4,15 +4,16 @@ import Picker from "./Picker";
 import Footer from "./Footer";
 
 function App() {
-  return (<>
-    <BrowserRouter>
-      <Routes>
-        <Route path="header" element={<Header />} />
-        <Route path="picker" element={<Picker />} />
-      </Routes>
-    </BrowserRouter>
-    <Footer />
-  </>
+  return (
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="header" element={<Header />} />
+          <Route path="picker" element={<Picker />} />
+        </Routes>
+      </BrowserRouter>
+      <Footer />
+    </>
   );
 }
 
