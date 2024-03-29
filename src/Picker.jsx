@@ -1,6 +1,6 @@
 function Picker() {
     function end() {
-        window.location.href = '/header';
+        window.location.href = '/start';
     }
 
     document.querySelector('body').style.backgroundImage = 'url("BackgroundPicker.jpg")';
