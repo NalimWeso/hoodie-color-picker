@@ -1,4 +1,4 @@
-function Header() {
+function Start() {
     function start() {
         window.location.href = '/picker';
     }
@@ -12,4 +12,4 @@ function Header() {
     )
 }
 
-export default Header
+export default Start
