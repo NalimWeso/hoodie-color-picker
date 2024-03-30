@@ -1,21 +1,26 @@
-import { useState, useEffect } from "react"
+import { useState, useRef } from "react"
 import arrayShuffle from 'array-shuffle'
 
 function Picker() {
     const [number, setNumber] = useState(0);
     const [hoodieImage, setHoodieImage] = useState(0);
     const [borderColor, setBorderColor] = useState('#F5ECDC');
+    const buttonRef = useRef();
     let images = [];
 
-    useEffect(() => {
-        document.body.style.backgroundImage = 'url("backgrounds/BackgroundPicker.jpg")';
+    document.body.style.backgroundImage = 'url("backgrounds/BackgroundPicker.jpg")';
 
-        return () => {
-            document.body.style.backgroundImage = 'url(/backgrounds/BackgroundStart.jpg)';
-        };
-    }, []);
+    function deactivateButton() {
+        buttonRef.current.style.cursor = 'not-allowed';
+        buttonRef.current.style.filter = 'grayscale(100%)';
+    }
 
-    function GenerateNumber() {
+    function activateButton() {
+        buttonRef.current.style.cursor = '';
+        buttonRef.current.style.filter = '';
+    }
+
+    function generateNumber() {
         const oldNumber = number;
 
         let newNumber = Math.floor((Math.random() * 7) + 1);
@@ -41,27 +46,26 @@ function Picker() {
                 if (index !== images.length - 1) {
                     setHoodieImage(image);
                     setBorderColor('#F5ECDC');
-
-                    // document.querySelector('.picker img button:first-child').style.cursor = 'not-allowed';
-                    // document.querySelector('.picker img button:first-child').style.filter = 'grayscale(100%)';
+                    deactivateButton();
                 } else {
                     setHoodieImage(newNumber);
                     setBorderColor('green');
+                    activateButton();
                 }
             }, delay);
             delay += 500;
         });
     }
 
-    function End() {
+    function end() {
         window.location.href = '/start';
     }
 
     return (
         <div className="picker">
             <img src={`hoodies/${[hoodieImage]}.jpg`} alt={`Hoodie no. ${[hoodieImage]}.`} style={{ borderColor: borderColor }} />
-            <button onClick={GenerateNumber}>CHOOSE RANDOM COLOR</button>
-            <button onClick={End}>BACK TO MAIN PAGE</button>
+            <button onClick={generateNumber} ref={buttonRef}>CHOOSE RANDOM COLOR</button>
+            <button onClick={end}>BACK TO MAIN PAGE</button>
         </div>
     )
 }
