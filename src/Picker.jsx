@@ -9,9 +9,10 @@ function Picker() {
     document.querySelector('body').style.backgroundImage = 'url("backgrounds/BackgroundPicker.jpg")';
 
     const [number, setNumber] = useState(0);
-    const images = [];
+    const [currentHoodieImage, setcurrentHoodieImage] = useState(0);
+    let images = [];
 
-    function generateNumber() {
+    function GenerateNumber() {
         const oldNumber = number;
 
         let newNumber = Math.floor((Math.random() * 7) + 1);
@@ -32,24 +33,44 @@ function Picker() {
             }
 
             if (i !== newNumber && i !== oldNumber) {
-                images.push(`hoodies/${i}.jpg`);
+                images.push(i);
             }
         }
 
-        const shuffledImages = arrayShuffle(images);
+        images = arrayShuffle(images);
 
-        console.log(shuffledImages);
+        console.log(images);
         console.log('----------------------------------------');
-    }
 
-    function showHoodie() {
-        return <img src={`hoodies/${number}.jpg`} alt="" />;
-    };
+        setTimeout(() => {
+            setcurrentHoodieImage(images[0]);
+        }, 700);
+
+        setTimeout(() => {
+            setcurrentHoodieImage(images[1]);
+        }, 1400);
+
+        setTimeout(() => {
+            setcurrentHoodieImage(images[2]);
+        }, 2100);
+
+        setTimeout(() => {
+            setcurrentHoodieImage(images[3]);
+        }, 2800);
+
+        setTimeout(() => {
+            setcurrentHoodieImage(images[4]);
+        }, 3500);
+
+        setTimeout(() => {
+            setcurrentHoodieImage(newNumber);
+        }, 4200);
+    }
 
     return (
         <div className="picker">
-            {showHoodie()}
-            <button onClick={generateNumber}>CHOOSE RANDOM COLOR</button>
+            <img src={`hoodies/${[currentHoodieImage]}.jpg`} alt="" />
+            <button onClick={GenerateNumber}>CHOOSE RANDOM COLOR</button>
             <button onClick={end}>BACK TO MAIN PAGE</button>
         </div>
     )
