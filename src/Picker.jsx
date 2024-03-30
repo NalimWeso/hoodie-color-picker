@@ -7,7 +7,7 @@ function Picker() {
 
     document.querySelector('body').style.backgroundImage = 'url("BackgroundPicker.jpg")';
 
-    const [number, setNumber] = useState(1);
+    const [number, setNumber] = useState(0);
 
     function generateNumber() {
         let newNumber = Math.floor((Math.random() * 7) + 1);
