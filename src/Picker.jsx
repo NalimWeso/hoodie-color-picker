@@ -5,6 +5,7 @@ function Picker() {
     const [number, setNumber] = useState(0);
     const [hoodieImage, setHoodieImage] = useState(0);
     const [borderColor, setBorderColor] = useState('#F5ECDC');
+    const [buttonDisabled, setButtonDisabled] = useState(false);
     const buttonRef = useRef();
     let images = [];
 
@@ -21,6 +22,9 @@ function Picker() {
     }
 
     function generateNumber() {
+        setButtonDisabled(true);
+        deactivateButton();
+
         const oldNumber = number;
 
         let newNumber = Math.floor((Math.random() * 7) + 1);
@@ -46,10 +50,10 @@ function Picker() {
                 if (index !== images.length - 1) {
                     setHoodieImage(image);
                     setBorderColor('#F5ECDC');
-                    deactivateButton();
                 } else {
                     setHoodieImage(newNumber);
                     setBorderColor('green');
+                    setButtonDisabled(false);
                     activateButton();
                 }
             }, delay);
@@ -64,7 +68,7 @@ function Picker() {
     return (
         <div className="picker">
             <img src={`hoodies/${[hoodieImage]}.jpg`} alt={`Hoodie no. ${[hoodieImage]}.`} style={{ borderColor: borderColor }} />
-            <button onClick={generateNumber} ref={buttonRef}>CHOOSE RANDOM COLOR</button>
+            <button onClick={generateNumber} ref={buttonRef} disabled={buttonDisabled}>CHOOSE RANDOM COLOR</button>
             <button onClick={end}>BACK TO MAIN PAGE</button>
         </div>
     )
