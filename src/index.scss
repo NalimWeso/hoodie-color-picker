@@ -108,12 +108,11 @@ header {
     img {
         margin-bottom: 10px;
         width: 450px;
-        border: 3px solid $basicWhite;
+        border: 4px solid $basicWhite;
         border-radius: 15px;
         transition: border-color 0.3s ease-in-out, filter 0.3s ease-in-out;
 
         &:hover {
-            border-color: $blue;
             filter: saturate(110%);
         }
     }
