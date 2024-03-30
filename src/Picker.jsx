@@ -4,6 +4,7 @@ import arrayShuffle from 'array-shuffle'
 function Picker() {
     const [number, setNumber] = useState(0);
     const [hoodieImage, setHoodieImage] = useState(0);
+    const [borderColor, setBorderColor] = useState('#F5ECDC');
     let images = [];
 
     useEffect(() => {
@@ -39,8 +40,13 @@ function Picker() {
             setTimeout(() => {
                 if (index !== images.length - 1) {
                     setHoodieImage(image);
+                    setBorderColor('#F5ECDC');
+
+                    // document.querySelector('.picker img button:first-child').style.cursor = 'not-allowed';
+                    // document.querySelector('.picker img button:first-child').style.filter = 'grayscale(100%)';
                 } else {
                     setHoodieImage(newNumber);
+                    setBorderColor('green');
                 }
             }, delay);
             delay += 500;
@@ -53,7 +59,7 @@ function Picker() {
 
     return (
         <div className="picker">
-            <img src={`hoodies/${[hoodieImage]}.jpg`} alt={`Hoodie no. ${[hoodieImage]}.`} />
+            <img src={`hoodies/${[hoodieImage]}.jpg`} alt={`Hoodie no. ${[hoodieImage]}.`} style={{ borderColor: borderColor }} />
             <button onClick={GenerateNumber}>CHOOSE RANDOM COLOR</button>
             <button onClick={End}>BACK TO MAIN PAGE</button>
         </div>
