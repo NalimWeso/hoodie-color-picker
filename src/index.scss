@@ -110,12 +110,11 @@ header {
         width: 450px;
         border: 3px solid $basicWhite;
         border-radius: 15px;
-        filter: saturate(200%) opacity(75%);
         transition: border-color 0.3s ease-in-out, filter 0.3s ease-in-out;
 
         &:hover {
             border-color: $blue;
-            filter: saturate(200%) opacity(100%);
+            filter: saturate(110%);
         }
     }
 
