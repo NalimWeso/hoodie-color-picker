@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import arrayShuffle from 'array-shuffle'
 
 function Picker() {
     function end() {
@@ -8,9 +9,11 @@ function Picker() {
     document.querySelector('body').style.backgroundImage = 'url("backgrounds/BackgroundPicker.jpg")';
 
     const [number, setNumber] = useState(0);
-    const array = [];
+    const images = [];
 
     function generateNumber() {
+        const oldNumber = number;
+
         let newNumber = Math.floor((Math.random() * 7) + 1);
 
         while (newNumber === number) {
@@ -19,22 +22,28 @@ function Picker() {
 
         setNumber(newNumber);
 
-        // for (let i = 1; i <= 7; i++) {
-        //     // if (number === 0) {
-        //     //     i++;
-        //     // }
+        console.log('newNumber (right now on screen): ' + newNumber);
+        console.log('oldNumber (before):' + oldNumber);
 
-        //     if (i !== number) {
-        //         array.push(i);
-        //     }
+        for (let i = 1; i <= 7; i++) {
+            if (oldNumber === 0 && i === 7) {
+                const randomIndex = Math.floor(Math.random() * images.length);
+                images.splice(randomIndex, 1);
+            }
 
-        // }
+            if (i !== newNumber && i !== oldNumber) {
+                images.push(`hoodies/${i}.jpg`);
+            }
+        }
 
-        // console.log(array);
+        const shuffledImages = arrayShuffle(images);
+
+        console.log(shuffledImages);
+        console.log('----------------------------------------');
     }
 
-    const showHoodie = () => {
-        return <img src={`hoodies/${number}.jpg`} alt="" />
+    function showHoodie() {
+        return <img src={`hoodies/${number}.jpg`} alt="" />;
     };
 
     return (
