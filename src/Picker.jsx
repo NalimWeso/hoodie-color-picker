@@ -4,7 +4,6 @@ import arrayShuffle from 'array-shuffle'
 function Picker() {
     const [number, setNumber] = useState(0);
     const [hoodieImage, setHoodieImage] = useState(0);
-    // const [borderColor, setBorderColor] = useState('#F5ECDC');
     const [buttonDisabled, setButtonDisabled] = useState(false);
     const buttonRef = useRef();
     const imgRef = useRef();
