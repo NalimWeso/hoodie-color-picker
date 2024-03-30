@@ -26,7 +26,7 @@ function Picker() {
 
         const oldNumber = number;
 
-        let newNumber = Math.floor((Math.random() * 7) + 1);
+        const newNumber = Math.floor((Math.random() * 7) + 1);
 
         setNumber(newNumber);
 
@@ -51,7 +51,7 @@ function Picker() {
                     changeBorderColor('#F5ECDC');
                 } else {
                     setHoodieImage(newNumber);
-                    changeBorderColor('green'); // CHANGE THIS GREEN!
+                    changeBorderColor('#009200');
                     setButtonDisabled(false);
                     toggleButton('', '');
                 }
@@ -66,7 +66,7 @@ function Picker() {
 
     return (
         <div className="picker">
-            <img src={`hoodies/${[hoodieImage]}.jpg`} alt={`Hoodie no. ${[hoodieImage]}.`} ref={imgRef} />
+            <img src={`hoodies/${hoodieImage}.jpg`} alt={`Hoodie no. ${hoodieImage}.`} ref={imgRef} />
             <button onClick={generateNumber} ref={buttonRef} disabled={buttonDisabled}>CHOOSE RANDOM COLOR</button>
             <button onClick={end}>BACK TO MAIN PAGE</button>
         </div>
