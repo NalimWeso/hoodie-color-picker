@@ -1,5 +1,5 @@
 function Start() {
-    function start() {
+    function ClickStart() {
         window.location.href = '/picker';
     }
 
@@ -7,7 +7,7 @@ function Start() {
         <header>
             <h5><a href="https://github.com/NalimWeso" target="_blank">NALIMWESO</a> PRESENTS</h5>
             <h1>HOODIE COLOR PICKER</h1>
-            <button onClick={start}>START</button>
+            <button onClick={ClickStart}>START</button>
         </header >
     )
 }
