@@ -1,12 +1,4 @@
-$basicWhite: #F5ECDC;
-$basicWhiteHover: #F5ECDCD0;
-$orange: #F05D23;
-$orangeOpacityLight: #F05D23C2;
-$orangeOpacityDark: #F05D2355;
-$blue: #0092CA;
-$blueOpacityDark: #0092CA55;
-$blackOpacityLight: #0000005E;
-$blackOpacityDark: #00000085;
+@import './variables';
 
 body {
     background-image: url(/backgrounds/BackgroundStart.jpg);
