@@ -43,7 +43,7 @@ function Picker() {
 
         images = arrayShuffle(images);
 
-        let delay = 500;
+        let delay = 200;
         images.forEach((image, index) => {
             setTimeout(() => {
                 if (index !== images.length - 1) {
@@ -56,7 +56,7 @@ function Picker() {
                     toggleButton('', '');
                 }
             }, delay);
-            delay += 500;
+            delay += 200;
         });
     }
 
