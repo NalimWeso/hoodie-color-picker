@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Start from "./Start";
-import Picker from "./Picker";
-import Footer from "./Footer";
+import Start from "./components/Start";
+import Picker from "./components/Picker";
+import Footer from "./components/Footer";
 
 function App() {
   return (
