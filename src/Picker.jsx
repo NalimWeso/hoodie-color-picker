@@ -11,8 +11,9 @@ function Picker() {
 
     document.body.style.backgroundImage = 'url("backgrounds/BackgroundPicker.jpg")';
 
-    function changeBorderColor(borderColor) {
+    function changeBorder(borderColor, boxShadow) {
         imgRef.current.style.borderColor = borderColor;
+        imgRef.current.style.boxShadow = boxShadow;
     }
 
     function toggleButton(cursor, filter) {
@@ -49,10 +50,10 @@ function Picker() {
             setTimeout(() => {
                 if (index !== images.length - 1) {
                     setHoodieImage(image);
-                    changeBorderColor('#F5ECDC');
+                    changeBorder('#F5ECDC', '');
                 } else {
                     setHoodieImage(newNumber);
-                    changeBorderColor('#009200');
+                    changeBorder('#009200', '0px 0px 20px #009200');
                     setButtonDisabled(false);
                     toggleButton('', '');
                 }
