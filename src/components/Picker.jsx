@@ -9,7 +9,7 @@ function Picker() {
     const imgRef = useRef();
     let images = [];
 
-    document.body.style.backgroundImage = 'url("../assets/backgrounds/BackgroundPicker.jpg")';
+    document.body.style.backgroundImage = 'url("src/images/backgrounds/BackgroundPicker.jpg")';
 
     function changeBorder(borderColor, boxShadow) {
         imgRef.current.style.borderColor = borderColor;
@@ -68,7 +68,7 @@ function Picker() {
 
     return (
         <div className="picker">
-            <img src={`../assets/hoodies/${hoodieImage}.jpg`} alt={`Hoodie no. ${hoodieImage}.`} ref={imgRef} />
+            <img src={`src/images/hoodies/${hoodieImage}.jpg`} alt={`Hoodie no. ${hoodieImage}.`} ref={imgRef} />
             <button onClick={generateNumber} ref={buttonRef} disabled={buttonDisabled}>CHOOSE RANDOM COLOR</button>
             <button onClick={end}>BACK TO MAIN PAGE</button>
         </div>
