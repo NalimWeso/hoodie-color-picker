@@ -59,7 +59,6 @@ header {
     user-select: none;
 
     @media (max-width: 1100px) {
-
         padding: 1.5vw;
         border-radius: 5vw;
     }
@@ -124,20 +123,20 @@ header {
         }
     }
 
-    @mixin buttonResponsive() {
+    @mixin buttonResponsive($fontSize) {
         @media (max-width: 755px) {
-            font-size: 5.5vw;
+            font-size: $fontSize;
             padding: 1.5vw;
         }
     }
 
     button {
         @include button(50px, $blue, $blueOpacityDark);
-        @include buttonResponsive();
+        @include buttonResponsive(7vw);
 
         &:last-child {
             @include button(30px, $blue, $blueOpacityDark);
-            @include buttonResponsive();
+            @include buttonResponsive(6vw);
         }
     }
 }
