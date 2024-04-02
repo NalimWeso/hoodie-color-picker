@@ -30,11 +30,6 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out, box-shadow 0.1s ease-in-out;
 
-    @media (max-width: 755px) {
-        // font-size: 5.5vw;
-        // padding: 1.5vw;
-    }
-
     &:hover {
         background-color: $backgroundColor;
         color: $basicWhiteHover;
@@ -119,13 +114,26 @@ header {
         border: 4px solid $basicWhite;
         border-radius: 15px;
         transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, filter 0.3s ease-in-out;
+
+        @media (max-width: 500px) {
+            width: 90vw;
+        }
+    }
+
+    @mixin buttonResponsive() {
+        @media (max-width: 755px) {
+            font-size: 5.5vw;
+            padding: 1.5vw;
+        }
     }
 
     button {
         @include button(50px, $blue, $blueOpacityDark);
+        @include buttonResponsive();
 
         &:last-child {
             @include button(30px, $blue, $blueOpacityDark);
+            @include buttonResponsive();
         }
     }
 }
