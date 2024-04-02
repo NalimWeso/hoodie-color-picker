@@ -30,6 +30,11 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out, box-shadow 0.1s ease-in-out;
 
+    @media (max-width: 755px) {
+        // font-size: 5.5vw;
+        // padding: 1.5vw;
+    }
+
     &:hover {
         background-color: $backgroundColor;
         color: $basicWhiteHover;
@@ -59,6 +64,7 @@ header {
     user-select: none;
 
     @media (max-width: 1100px) {
+
         padding: 1.5vw;
         border-radius: 5vw;
     }
@@ -66,6 +72,11 @@ header {
     h5 {
         margin: 0 0 -12px 0;
         padding: 0;
+
+        @media (max-width: 920px) {
+            font-size: 5vw;
+            margin-bottom: -1vw;
+        }
 
         a {
             color: $orange;
@@ -83,6 +94,11 @@ header {
         margin: 0;
         padding: 0;
         cursor: default;
+
+        @media (max-width: 920px) {
+            font-size: 10vw;
+            margin-bottom: 20px;
+        }
     }
 
     button {
