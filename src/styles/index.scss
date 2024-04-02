@@ -97,7 +97,7 @@ header {
 
         @media (max-width: 920px) {
             font-size: 10vw;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
     }
 
@@ -139,6 +139,10 @@ footer {
     transform: translate(-50%, -50%);
     user-select: none;
 
+    @media (max-width: 710px) {
+        transform: translate(-50%, -10%);
+    }
+
     a {
         background-color: $blackOpacityLight;
         color: $basicWhite;
@@ -149,6 +153,11 @@ footer {
         border-radius: 5px;
         text-decoration: none;
         transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.1s ease-in-out;
+
+        @media (max-width: 710px) {
+            display: block;
+            margin: 5px auto;
+        }
 
         &:hover {
             background-color: $blackOpacityDark;
