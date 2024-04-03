@@ -1,6 +1,6 @@
 function Start() {
     function clickStart() {
-        window.location.href = '/picker';
+        window.location.href = '/hoodie-color-picker/picker';
     }
 
     return (
