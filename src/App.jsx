@@ -6,10 +6,10 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <>
-      <BrowserRouter basename={import.meta.env.DEV ? '/' : '/hoodie-color-picker/'}>
+      <BrowserRouter basename={`/hoodie-color-picker/`}>
         <Routes>
-          <Route path="/" element={<Start />} />
-          <Route path="/picker" element={<Picker />} />
+          <Route path="/start" element={<Start />} />
+          <Route path="picker" element={<Picker />} />
         </Routes>
       </BrowserRouter>
       <Footer />
