@@ -2,7 +2,7 @@
   "name": "hoodie-color-picker",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://nalimweso.github.io/hoodie-color-picker/",
+  "homepage": "https://nalimweso.github.io/hoodie-color-picker/start",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
