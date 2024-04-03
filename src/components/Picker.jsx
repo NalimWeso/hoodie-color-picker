@@ -1,4 +1,5 @@
 import { useState, useRef } from "react"
+import { useNavigate } from 'react-router-dom'
 import arrayShuffle from 'array-shuffle'
 
 function Picker() {
@@ -7,6 +8,7 @@ function Picker() {
     const [buttonDisabled, setButtonDisabled] = useState(false);
     const buttonRef = useRef();
     const imgRef = useRef();
+    const navigate = useNavigate();
     let images = [];
 
     document.body.style.backgroundImage = 'url("src/images/backgrounds/BackgroundPicker.jpg")';
@@ -62,15 +64,15 @@ function Picker() {
         });
     }
 
-    function end() {
-        window.location.href = '/hoodie-color-picker/';
+    function clickEnd() {
+        navigate('/');
     }
 
     return (
         <div className="picker">
             <img src={`src/images/hoodies/${hoodieImage}.jpg`} alt={`Hoodie no. ${hoodieImage}.`} ref={imgRef} />
             <button onClick={generateNumber} ref={buttonRef} disabled={buttonDisabled}>CHOOSE RANDOM COLOR</button>
-            <button onClick={end}>BACK TO MAIN PAGE</button>
+            <button onClick={clickEnd}>BACK TO MAIN PAGE</button>
         </div>
     )
 }

@@ -1,6 +1,12 @@
+import { useNavigate } from 'react-router-dom'
+
 function Start() {
+    const navigate = useNavigate();
+
+    document.body.style.backgroundImage = 'url("src/images/backgrounds/BackgroundStart.jpg")';
+
     function clickStart() {
-        window.location.href = '/hoodie-color-picker/picker';
+        navigate('/picker');
     }
 
     return (
