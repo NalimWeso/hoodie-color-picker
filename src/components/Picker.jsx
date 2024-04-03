@@ -63,7 +63,7 @@ function Picker() {
     }
 
     function end() {
-        window.location.href = '/start';
+        window.location.href = '/hoodie-color-picker/';
     }
 
     return (
