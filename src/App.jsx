@@ -8,8 +8,8 @@ function App() {
     <>
       <BrowserRouter basename={`/hoodie-color-picker/`}>
         <Routes>
-          <Route path="/start" element={<Start />} />
-          <Route path="picker" element={<Picker />} />
+          <Route path="/" element={<Start />} />
+          <Route path="/picker" element={<Picker />} />
         </Routes>
       </BrowserRouter>
       <Footer />
