@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom'
 function Start() {
     const navigate = useNavigate();
 
-    document.body.style.backgroundImage = 'url("src/images/backgrounds/BackgroundStart.jpg")';
+    document.body.style.backgroundImage = 'url("backgrounds/BackgroundStart.jpg")';
+
 
     function clickStart() {
         navigate('/picker');
