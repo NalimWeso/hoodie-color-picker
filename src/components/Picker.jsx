@@ -70,7 +70,7 @@ function Picker() {
 
     return (
         <div className="picker">
-            <img src={`hoodies/${hoodieImage}.jpg`} alt={`Hoodie no. ${hoodieImage}.`} ref={imgRef} />
+            <img src={`hoodies/${hoodieImage}.webp`} alt={`Hoodie no. ${hoodieImage}.`} ref={imgRef} />
             <button onClick={generateNumber} ref={buttonRef} disabled={buttonDisabled}>CHOOSE RANDOM COLOR</button>
             <button onClick={clickEnd}>BACK TO MAIN PAGE</button>
         </div>
