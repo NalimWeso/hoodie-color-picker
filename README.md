@@ -16,4 +16,4 @@ Do you ever find yourself standing in front of a closet full of hoodies in diffe
 
 ## Conclusion
 
-Thanks to advanced coding in the React framework, your outfit will be surprising yet perfectly matched!
+Thanks to *sophisticated* coding in the React framework, your outfit will be surprising yet perfectly matched!
